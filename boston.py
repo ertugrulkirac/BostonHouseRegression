@@ -2,7 +2,7 @@
 """
 Created on Sat May  4 10:42:10 2024
 
-@author: ertug
+@author: ertugrulkirac
 """
 
 import numpy as np # linear algebra
