@@ -24,6 +24,11 @@ warnings.filterwarnings('ignore')
 
 data = boston.drop(['MEDV'], axis=1)
 
+
+for i in data.columns:
+    data[i] = data[i].fillna(data[i].mean())
+print(data)
+
 for i in data.columns:
     data[i] = scaler.fit_transform(data[[i]]) 
 print(data)
@@ -46,7 +51,7 @@ lr.fit(x_train, y_train)
 
 y_pred_lr = lr.predict(x_test)
 
-print('mse ', mean_squared_error(y_test, y_pred_lr))
+"""print('mse ', mean_squared_error(y_test, y_pred_lr))"""
 print('r2_score',r2_score(y_test, y_pred_lr) )
 
 
@@ -60,7 +65,7 @@ rnd_reg.fit(x_train, y_train)
 
 y_pred_rnd_reg = rnd_reg.predict(x_test)
 
-print('mse ', mean_squared_error(y_test, y_pred_rnd_reg))
+"""print('mse ', mean_squared_error(y_test, y_pred_rnd_reg))"""
 print('r2_score',r2_score(y_test, y_pred_rnd_reg) )
 
 
@@ -72,7 +77,7 @@ gb.fit(x_train, y_train)
 
 y_pred_gb = gb.predict(x_test)
 
-print('mse ', mean_squared_error(y_test, y_pred_gb))
+"""print('mse ', mean_squared_error(y_test, y_pred_gb))"""
 print('r2_score',r2_score(y_test, y_pred_gb) )
 
 #pip install xgboost
@@ -86,7 +91,7 @@ xg.fit(x_train, y_train)
 
 y_pred_xg = xg.predict(x_test)
 
-print('mse ', mean_squared_error(y_test, y_pred_xg))
+"""print('mse ', mean_squared_error(y_test, y_pred_xg))"""
 print('r2_score',r2_score(y_test, y_pred_xg) )
 
 from sklearn.linear_model import Lasso
@@ -99,7 +104,7 @@ lss.fit(x_train, y_train)
 
 y_pred_lss = lss.predict(x_test)
 
-print('mse ', mean_squared_error(y_test, y_pred_lss))
+"""print('mse ', mean_squared_error(y_test, y_pred_lss))"""
 print('r2_score',r2_score(y_test, y_pred_lss) )
 
 
